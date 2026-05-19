@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Profil - Bijoux Pro</title>
+  <link rel="stylesheet" href="site-style.css" />
+  <style>
+    .profile-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .profile-header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .profile-info h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+    }
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .profile-stat {
+      background: rgba(255,255,255,0.2);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .profile-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    .profile-actions button {
+      background: white;
+      color: var(--primary);
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    .profile-actions button:hover {
+      background: rgba(255,255,255,0.9);
+    }
+    .tabs-profile {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .tab-link {
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: #666;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .tab-link.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    .reservations-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .reservation-item {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .reservation-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .reservation-date {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .reservation-date-icon {
+      font-size: 1.5rem;
+    }
+    .reservation-items-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .reservation-product {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      background: var(--light);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .product-thumb {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .product-info {
+      display: grid;
+      gap: 0.3rem;
+    }
+    .product-info strong {
+      font-size: 1rem;
+    }
+    .product-info small {
+      color: #666;
+    }
+    .reservation-footer {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .reservation-total {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+    .reservation-actions {
+      display: flex;
+      gap: 0.8rem;
+    }
+    .btn-small {
+      padding: 0.6rem 1rem;
+      background: var(--primary);
+      color: var(--dark);
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .btn-small:hover {
+      transform: translateY(-2px);
+    }
+    .btn-small.danger {
+      background: var(--danger);
+      color: white;
+    }
+    .edit-form {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      max-width: 500px;
+    }
+    .form-group-profile {
+      margin-bottom: 1.5rem;
+    }
+    .form-group-profile label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .form-group-profile input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .wishlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .wishlist-item {
+      background: white;
+      border-radius: 15px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .wishlist-item-remove {
+      background: var(--danger);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: #999;
+    }
+    .empty-state-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-top">
+    Bienvenue dans votre espace personnel | <a href="#" onclick="logout()" style="color: var(--primary); text-decoration: underline;">Déconnexion</a>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <div class="logo-icon">B</div>
+        <span>Bijoux Pro</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="products.html">Boutique</a></li>
+        <li><a href="client-profile.html" style="color: var(--primary);">Mon Profil</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+        <button class="btn-login" onclick="logout()">Déconnexion</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="profile-container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="profile-info">
+        <h1 id="client-name">Chargement...</h1>
+        <p id="client-email">Email</p>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <div class="stat-number" id="total-orders">0</div>
+            <div class="stat-label">Commandes</div>
+          </div>
+          <div class="profile-stat">
+            <div class="stat-number" id="total-spent">0€</div>
+            <div class="stat-label">Dépensé</div>
+          </div>
+          <div class="profile-stat">
+            <div class="stat-number" id="wishlist-count">0</div>
+            <div class="stat-label">Favoris</div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <button onclick="editProfile()">Modifier profil</button>
+        <button onclick="viewHistory()">Historique</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-profile">
+      <span class="tab-link active" onclick="switchProfileTab('reservations')">Mes réservations</span>
+      <span class="tab-link" onclick="switchProfileTab('wishlist')">Mes favoris</span>
+      <span class="tab-link" onclick="switchProfileTab('edit')">Modifier profil</span>
+    </div>
+
+    <!-- Reservations Tab -->
+    <div id="reservations" class="tab-pane active">
+      <div class="reservations-list" id="reservations-list"></div>
+    </div>
+
+    <!-- Wishlist Tab -->
+    <div id="wishlist" class="tab-pane">
+      <div class="wishlist-grid" id="wishlist-grid"></div>
+    </div>
+
+    <!-- Edit Profile Tab -->
+    <div id="edit" class="tab-pane">
+      <div class="edit-form">
+        <h2>Modifier mon profil</h2>
+        <form onsubmit="saveProfile(event)">
+          <div class="form-group-profile">
+            <label>Nom complet</label>
+            <input type="text" id="edit-name" required />
+          </div>
+          <div class="form-group-profile">
+            <label>Email</label>
+            <input type="email" id="edit-email" required />
+          </div>
+          <div class="form-group-profile">
+            <label>Téléphone</label>
+            <input type="tel" id="edit-phone" />
+          </div>
+          <div class="form-group-profile">
+            <label>Nouveau mot de passe (optionnel)</label>
+            <input type="password" id="edit-password" minlength="6" />
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Enregistrer les modifications</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>À propos</h4>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="#">Nos valeurs</a></li>
+          <li><a href="#">Carrières</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Aide</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Livraison</a></li>
+          <li><a href="#">Retours</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="#">Conditions</a></li>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Suivez-nous</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Bijoux Pro. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="site-script.js"></script>
+  <script>
+    // Check if client is logged in
+    window.addEventListener('load', () => {
+      const isLogged = sessionStorage.getItem('clientLogged');
+      if (!isLogged) {
+        window.location.href = 'client-login.html';
+        return;
+      }
+
+      loadClientProfile();
+      loadClientReservations();
+      loadWishlist();
+    });
+
+    function loadClientProfile() {
+      const name = sessionStorage.getItem('clientName');
+      const email = sessionStorage.getItem('clientEmail');
+      const clientId = sessionStorage.getItem('clientId');
+
+      document.getElementById('client-name').textContent = name;
+      document.getElementById('client-email').textContent = email;
+      
+      // Load edit form
+      document.getElementById('edit-name').value = name;
+      document.getElementById('edit-email').value = email;
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const user = users.find(u => u.id == clientId);
+      if (user && user.phone) {
+        document.getElementById('edit-phone').value = user.phone;
+      }
+    }
+
+    function loadClientReservations() {
+      const clientId = sessionStorage.getItem('clientId');
+      const reservations = JSON.parse(localStorage.getItem('reservations') || '[]');
+      const clientReservations = reservations.filter(r => r.clientId == clientId);
+
+      const total = clientReservations.length;
+      const spent = clientReservations.reduce((sum, r) => sum + r.total, 0);
+
+      document.getElementById('total-orders').textContent = total;
+      document.getElementById('total-spent').textContent = spent.toLocaleString('fr-FR') + '€';
+
+      const container = document.getElementById('reservations-list');
+      if (clientReservations.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📦</div><p>Aucune réservation pour le moment</p><a href="products.html" class="btn-primary" style="display: inline-block;">Découvrir nos produits</a></div>';
+        return;
+      }
+
+      container.innerHTML = clientReservations.map(res => `
+        <div class="reservation-item">
+          <div class="reservation-header">
+            <div class="reservation-date">
+              <span class="reservation-date-icon">📅</span>
+              <div>
+                <strong>Commande #${res.id}</strong>
+                <br>
+                <small>${res.date}</small>
+              </div>
+            </div>
+            <span class="status-pill status-${res.status === 'Confirmé' ? 'confirmed' : 'pending'}">${res.status}</span>
+          </div>
+          <div class="reservation-items-list">
+            ${res.items.map(item => `
+              <div class="reservation-product">
+                <div class="product-thumb">
+                  <img src="${item.image}" alt="${item.name}" />
+                </div>
+                <div class="product-info">
+                  <strong>${item.name}</strong>
+                  <small>Quantité: ${item.quantity}</small>
+                  <small>${item.material}</small>
+                </div>
+                <div style="font-weight: 700; color: var(--primary);">${(item.price * item.quantity).toLocaleString('fr-FR')} €</div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="reservation-footer">
+            <span style="color: #666;">Total de la commande</span>
+            <span></span>
+            <span class="reservation-total">${res.total.toLocaleString('fr-FR')} €</span>
+          </div>
+          <div class="reservation-actions" style="margin-top: 1rem;">
+            <button class="btn-small" onclick="modifyReservation(${res.id})">Modifier</button>
+            <button class="btn-small danger" onclick="cancelReservation(${res.id})">Annuler</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadWishlist() {
+      const clientId = sessionStorage.getItem('clientId');
+      const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+      const clientWishlist = wishlist.filter(w => w.clientId == clientId);
+
+      document.getElementById('wishlist-count').textContent = clientWishlist.length;
+
+      const container = document.getElementById('wishlist-grid');
+      if (clientWishlist.length === 0) {
+        container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-state-icon">❤️</div><p>Aucun favori pour le moment</p></div>';
+        return;
+      }
+
+      container.innerHTML = clientWishlist.map(item => `
+        <div class="wishlist-item">
+          <div style="margin-bottom: 0.5rem;">${item.name}</div>
+          <strong style="color: var(--primary);">${item.price} €</strong>
+          <button class="wishlist-item-remove" onclick="removeFromWishlist(${item.id})">Supprimer</button>
+        </div>
+      `).join('');
+    }
+
+    function switchProfileTab(tabName) {
+      document.querySelectorAll('.tab-pane').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function modifyReservation(id) {
+      alert('Modification de la commande #' + id);
+      // Future: Implement modification
+    }
+
+    function cancelReservation(id) {
+      if (confirm('Confirmer l\'annulation de cette commande?')) {
+        const reservations = JSON.parse(localStorage.getItem('reservations') || '[]');
+        const index = reservations.findIndex(r => r.id == id);
+        if (index !== -1) {
+          reservations.splice(index, 1);
+          localStorage.setItem('reservations', JSON.stringify(reservations));
+          loadClientReservations();
+          alert('Commande annulée.');
+        }
+      }
+    }
+
+    function removeFromWishlist(id) {
+      const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+      const index = wishlist.findIndex(w => w.id == id);
+      if (index !== -1) {
+        wishlist.splice(index, 1);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        loadWishlist();
+      }
+    }
+
+    function saveProfile(event) {
+      event.preventDefault();
+      
+      const clientId = sessionStorage.getItem('clientId');
+      const name = document.getElementById('edit-name').value;
+      const email = document.getElementById('edit-email').value;
+      const phone = document.getElementById('edit-phone').value;
+      const password = document.getElementById('edit-password').value;
+
+      let users = JSON.parse(localStorage.getItem('users') || '[]');
+      const userIndex = users.findIndex(u => u.id == clientId);
+
+      if (userIndex !== -1) {
+        users[userIndex].name = name;
+        users[userIndex].email = email;
+        users[userIndex].phone = phone;
+        if (password) {
+          users[userIndex].password = password;
+        }
+
+        localStorage.setItem('users', JSON.stringify(users));
+        sessionStorage.setItem('clientName', name);
+        sessionStorage.setItem('clientEmail', email);
+
+        alert('Profil modifié avec succès!');
+        loadClientProfile();
+      }
+    }
+
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = 'client-login.html';
+    }
+
+    function viewHistory() {
+      switchProfileTab('reservations');
+    }
+
+    function editProfile() {
+      switchProfileTab('edit');
+    }
+  </script>
+</body>
+</html>

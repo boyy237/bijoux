@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Chaussures</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #2c2c2c;
+      background: #f6f7fb;
+    }
+    header {
+      background: linear-gradient(135deg, #1d3557, #457b9d);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.04em;
+    }
+    header p {
+      margin: 0 auto;
+      max-width: 700px;
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+    main {
+      padding: 2rem 1.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 2.5rem;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(20, 29, 59, 0.08);
+      padding: 2rem;
+    }
+    section h2 {
+      margin-top: 0;
+      color: #1d3557;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .card {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 1.25rem;
+      border: 1px solid #e2e8f0;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .card p {
+      margin: 0.8rem 0 0;
+    }
+    .note {
+      background: #eaf3ff;
+      border-left: 5px solid #457b9d;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+      color: #6b7280;
+    }
+    @media (max-width: 650px) {
+      header {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Le Monde des Chaussures</h1>
+    <p>Découvrez les différents types de chaussures, comment les choisir selon votre style et vos activités, et comment les entretenir pour les garder belles plus longtemps.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Pourquoi les chaussures sont importantes</h2>
+      <p>Les chaussures ne se limitent pas à protéger nos pieds : elles reflètent notre style, soutiennent notre posture et complètent notre tenue. Une bonne paire peut transformer un look, améliorer le confort et réduire le risque de fatigue ou de blessures.</p>
+    </section>
+    <section>
+      <h2>Types de chaussures</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Baskets</h3>
+          <p>Polyvalentes et confortables, les baskets sont idéales pour un usage quotidien, la marche et les activités sportives légères. Elles existent en version minimalistes, running ou lifestyle.</p>
+        </div>
+        <div class="card">
+          <h3>Bottines et boots</h3>
+          <p>Ces modèles apportent du caractère et un bon maintien. Ils conviennent aux looks urbains et aux saisons fraîches, tout en offrant une bonne protection contre les intempéries.</p>
+        </div>
+        <div class="card">
+          <h3>Mocassins et souliers</h3>
+          <p>Parfaits pour les occasions formelles ou le bureau, les mocassins et les souliers misent sur l'élégance et la finition. Ils sont fabriqués en cuir ou en matériaux synthétiques haut de gamme.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Choisir la bonne paire</h2>
+      <p>Pour bien choisir, commencez par connaître votre usage : travail, sport, loisirs ou sorties. Pensez à la taille, au maintien, à l'amorti et à la respirabilité. Une chaussure doit être adaptée à votre morphologie et à l'activité pour éviter l'inconfort.</p>
+      <div class="note">
+        <strong>Astuce :</strong> essayez vos chaussures en fin de journée, car les pieds gonflent légèrement. Prenez une demi-pointure au-dessus si vous comptez beaucoup marcher ou courir.
+      </div>
+    </section>
+    <section>
+      <h2>Entretien des chaussures</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Cuir</h3>
+          <p>Nettoyez avec un chiffon doux, utilisez un cirage adapté et conservez-les à l'écart de l'humidité. Un embauchoir en bois aide à garder la forme.</p>
+        </div>
+        <div class="card">
+          <h3>Tissu et toile</h3>
+          <p>Enlevez la poussière, puis lavez avec un linge humide et un savon doux. Laissez sécher naturellement loin d'une source de chaleur directe.</p>
+        </div>
+        <div class="card">
+          <h3>Entretien régulier</h3>
+          <p>Changez les semelles si nécessaire, vérifiez l'état des lacets et rangez vos chaussures dans un endroit sec. Le soin régulier prolonge leur durée de vie.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Quelques styles à connaître</h2>
+      <p>Les chaussures peuvent être classiques, sportives, décontractées ou chics. Les tendances évoluent, mais quelques basiques restent intemporels : la paire de baskets blanches, les bottines noires et les mocassins marron.</p>
+    </section>
+  </main>
+  <footer>
+    Page créée pour présenter les chaussures, leurs usages et leur entretien.
+  </footer>
+</body>
+</html>

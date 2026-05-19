@@ -1,0 +1,331 @@
+/* Style moderne pour le tableau de bord des réservations de bijoux */
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-strong: #eef2f9;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #7c3aed;
+  --primary-soft: #ede9fe;
+  --accent: #f97316;
+  --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+}
+.page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  transition: grid-template-columns 0.25s ease;
+}
+.page.collapsed-sidebar {
+  grid-template-columns: 0 1fr;
+}
+.page.collapsed-sidebar .sidebar {
+  display: none;
+}
+.sidebar {
+  background: linear-gradient(180deg, #2c3e50 0%, #1b2440 100%);
+  color: #f8fafc;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.18);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+.brand-title {
+  line-height: 1.1;
+}
+.brand-title span {
+  display: block;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+.brand-title strong {
+  font-size: 1.25rem;
+}
+.nav-list {
+  display: grid;
+  gap: 0.35rem;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  color: rgba(248,250,252,0.88);
+  transition: background 0.2s ease;
+}
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(255,255,255,0.1);
+}
+.nav-item svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.profile-card {
+  margin-top: auto;
+  padding: 1.35rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.profile-card h3 {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+}
+.profile-card p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+.main {
+  padding: 2rem;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+}
+.topbar-actions {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+.button-primary,
+.button-soft,
+.button-ghost {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.button-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.95rem 1.2rem;
+  box-shadow: 0 14px 32px rgba(124,58,237,0.22);
+}
+.button-soft {
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.85rem 1rem;
+}
+.button-ghost {
+  background: transparent;
+  color: var(--text);
+  padding: 0.85rem 1rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.stat-card {
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.stat-card span {
+  display: block;
+  margin-bottom: 0.85rem;
+  color: var(--muted);
+}
+.stat-card strong {
+  font-size: 2rem;
+  display: block;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+}
+.card {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.3rem;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+.cards-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.product-card,
+.account-card {
+  background: var(--surface-strong);
+  border-radius: 20px;
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+.product-card h3,
+.account-card h3 {
+  margin: 0;
+}
+.product-meta,
+.account-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.product-card button,
+.account-card button {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+.reservations-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+}
+.input-group input,
+.input-group select {
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  width: 220px;
+  color: var(--text);
+  background: #fff;
+}
+.reservation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.reservation-table th,
+.reservation-table td {
+  padding: 1rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+.reservation-table th {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.status-confirmed { background: rgba(34,197,94,0.12); color: #16a34a; }
+.status-pending { background: rgba(245,158,11,0.12); color: #d97706; }
+.status-cancelled { background: rgba(239,68,68,0.12); color: #dc2626; }
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed, #38bdf8);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+.footer-note {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+@media (max-width: 1120px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    grid-row: 2;
+  }
+}
+@media (max-width: 860px) {
+  .stats-grid,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .button-primary,
+  .button-soft,
+  .button-ghost {
+    width: 100%;
+  }
+  .input-group {
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .nav-item {
+    padding: 0.8rem;
+  }
+  .sidebar {
+    padding: 1.5rem;
+  }
+  .main {
+    padding: 1.5rem;
+  }
+}

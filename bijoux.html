@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Bijoux - Gestion de compte</title>
+  <link rel="stylesheet" href="bijoux.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">B</div>
+        <div class="brand-title">
+          <strong>Bijoux Pro</strong>
+          <span>Réservation & gestion</span>
+        </div>
+      </div>
+      <nav class="nav-list">
+        <a href="index.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7v10a8 8 0 0 0 16 0V7l-10-5"></path></svg>
+          Retour au site
+        </a>
+        <a href="#" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          Tableau de bord
+        </a>
+        <a href="products.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          Boutique
+        </a>
+        <a href="#" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l-7-7a9 9 0 0 1 14-8 9 9 0 0 1-7 15z"></path></svg>
+          Rapports
+        </a>
+        <a href="#" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4z"></path><path d="M6 20v-2c0-1.65 3.58-3 6-3s6 1.35 6 3v2"></path></svg>
+          Mon compte
+        </a>
+      </nav>
+      <div class="profile-card">
+        <h3>Landy du bois</h3>
+        <p>Responsable réservations</p>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1>Dashboard Bijoux</h1>
+          <p style="color: #6b7280; margin: 0.5rem 0 0;">Vue d'ensemble de la gestion des réservations et des comptes clients.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="button-soft button-ghost" type="button">Menu</button>
+          <button class="button-primary" type="button">Nouvelle réservation</button>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>Réservations actives</span>
+          <strong>24</strong>
+        </div>
+        <div class="stat-card">
+          <span>Bijoux réservés</span>
+          <strong>68</strong>
+        </div>
+        <div class="stat-card">
+          <span>Clients premium</span>
+          <strong>12</strong>
+        </div>
+        <div class="stat-card">
+          <span>Revenu estimé</span>
+          <strong>18 700 €</strong>
+        </div>
+      </div>
+      <div class="grid-2">
+        <section class="card">
+          <h2>Réservations récentes</h2>
+          <div class="reservations-header">
+            <div class="input-group">
+              <input id="searchProduct" type="text" placeholder="Rechercher produit, client ou statut" />
+            </div>
+            <div class="input-group">
+              <select>
+                <option>Dernières 30 jours</option>
+                <option>Dernières 7 jours</option>
+                <option>Ce mois-ci</option>
+              </select>
+            </div>
+          </div>
+          <table class="reservation-table">
+            <thead>
+              <tr>
+                <th>Produit</th>
+                <th>Client</th>
+                <th>Date</th>
+                <th>Statut</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="reservation-row">
+                <td><strong class="product-name">Collier Or Rose</strong></td>
+                <td><span class="client-name">Julie Martin</span></td>
+                <td>12 avr. 2026</td>
+                <td><span class="status-pill status-confirmed reservation-status">Confirmé</span></td>
+                <td>1 250 €</td>
+              </tr>
+              <tr class="reservation-row">
+                <td><strong class="product-name">Bracelet Perle</strong></td>
+                <td><span class="client-name">Sophie L.</span></td>
+                <td>10 avr. 2026</td>
+                <td><span class="status-pill status-pending reservation-status">En attente</span></td>
+                <td>780 €</td>
+              </tr>
+              <tr class="reservation-row">
+                <td><strong class="product-name">Bague Saphir</strong></td>
+                <td><span class="client-name">Emma Roche</span></td>
+                <td>08 avr. 2026</td>
+                <td><span class="status-pill status-confirmed reservation-status">Confirmé</span></td>
+                <td>2 490 €</td>
+              </tr>
+              <tr class="reservation-row">
+                <td><strong class="product-name">Boucles d'oreilles Diamant</strong></td>
+                <td><span class="client-name">Marc Delon</span></td>
+                <td>05 avr. 2026</td>
+                <td><span class="status-pill status-cancelled reservation-status">Annulé</span></td>
+                <td>1 680 €</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="footer-note">Utilise la barre de recherche pour trouver rapidement une réservation.</p>
+        </section>
+        <section class="card">
+          <h2>Gestion des comptes</h2>
+          <div class="cards-grid">
+            <div class="account-card">
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="avatar">LD</div>
+                <div>
+                  <h3>Laura Dupont</h3>
+                  <p>Administrateur</p>
+                </div>
+              </div>
+              <div class="account-meta">
+                <span>Email</span>
+                <strong>laura@bijouxpro.com</strong>
+              </div>
+              <div class="account-meta">
+                <span>Téléphone</span>
+                <strong>06 45 12 78 90</strong>
+              </div>
+              <button type="button">Voir profil</button>
+            </div>
+            <div class="account-card">
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="avatar">JC</div>
+                <div>
+                  <h3>Julien Caron</h3>
+                  <p>Client VIP</p>
+                </div>
+              </div>
+              <div class="account-meta">
+                <span>Réservations</span>
+                <strong>7</strong>
+              </div>
+              <div class="account-meta">
+                <span>Statut</span>
+                <strong>Actif</strong>
+              </div>
+              <button type="button">Contact</button>
+            </div>
+          </div>
+          <div class="notification" style="display:none; padding: 1rem 1.2rem; border-radius: 18px; background: #eef7ff; color: #1d4ed8; margin-top: 1rem;">Bienvenue dans votre espace de gestion !</div>
+        </section>
+      </div>
+      <section class="card">
+        <h2>Réserver un produit</h2>
+        <div class="cards-grid">
+          <div class="product-card">
+            <h3>Collier Éternel</h3>
+            <p>Un collier élégant en or blanc avec pierres fines, idéal pour les réservations exclusives.</p>
+            <div class="product-meta">
+              <span>Prix estimé</span>
+              <strong>2 150 €</strong>
+            </div>
+            <button class="reserve-button" type="button">Réserver</button>
+          </div>
+          <div class="product-card">
+            <h3>Bague Lumière</h3>
+            <p>Bague en or rose sertie d'un saphir bleuté, parfaite pour une commande sur-mesure.</p>
+            <div class="product-meta">
+              <span>Prix estimé</span>
+              <strong>1 980 €</strong>
+            </div>
+            <button class="reserve-button" type="button">Réserver</button>
+          </div>
+          <div class="product-card">
+            <h3>Bracelet Charme</h3>
+            <p>Bracelet en perles et or jaune, conçu pour les clients premium qui veulent se démarquer.</p>
+            <div class="product-meta">
+              <span>Prix estimé</span>
+              <strong>860 €</strong>
+            </div>
+            <button class="reserve-button" type="button">Réserver</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Gestion des comptes clients</h2>
+        <div class="input-group">
+          <input type="text" id="searchClient" placeholder="Rechercher par nom ou email..." />
+        </div>
+        <table class="reservation-table" style="margin-top: 1rem;">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Inscription</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="clients-tbody"></tbody>
+        </table>
+        <p class="footer-note">Gérez les comptes utilisateurs et consultez leurs informations de contact.</p>
+      </section>

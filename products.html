@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique - Bijoux Pro</title>
+  <link rel="stylesheet" href="site-style.css" />
+</head>
+<body>
+  <div class="header-top">
+    Livraison gratuite pour toute commande supérieure à 500€ | Satisfait ou remboursé 30 jours
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <div class="logo-icon">B</div>
+        <span>Bijoux Pro</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="products.html" style="color: var(--primary);">Boutique</a></li>
+        <li><a href="index.html#about">À propos</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="search-box">
+          <input type="text" placeholder="Rechercher..." data-search />
+          <button>🔍</button>
+        </div>
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+        <a href="login.html" class="btn-login">Connexion Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main style="max-width: 1400px; margin: 0 auto; padding: 2rem;">
+    <div style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Notre Collection</h1>
+      <p style="color: #666; font-size: 1.1rem;">Explorez nos bijoux haut de gamme et trouvez la pièce parfaite</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-section">
+      <div class="filters-header">
+        <h3>Filtrer par:</h3>
+        <button onclick="location.reload()" style="background: none; color: var(--primary); font-weight: 600;">Réinitialiser</button>
+      </div>
+      <div class="filters-group">
+        <div class="filter-item">
+          <label>Catégorie</label>
+          <select data-category>
+            <option value="">Toutes les catégories</option>
+            <option value="colliers">Colliers</option>
+            <option value="bagues">Bagues</option>
+            <option value="bracelets">Bracelets</option>
+            <option value="boucles">Boucles d'oreilles</option>
+            <option value="pendentifs">Pendentifs</option>
+            <option value="montres">Montres</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label>Prix maximal</label>
+          <select data-price>
+            <option value="">Tous les prix</option>
+            <option value="1000">Jusqu'à 1000€</option>
+            <option value="2500">Jusqu'à 2500€</option>
+            <option value="5000">Jusqu'à 5000€</option>
+            <option value="10000">Plus de 5000€</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label>Triée par</label>
+          <select onchange="sortProducts(this.value)">
+            <option value="default">Pertinence</option>
+            <option value="price-asc">Prix: bas à haut</option>
+            <option value="price-desc">Prix: haut à bas</option>
+            <option value="name">Nom (A-Z)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid"></div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>À propos</h4>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="#">Nos valeurs</a></li>
+          <li><a href="#">Carrières</a></li>
+          <li><a href="#">Presse</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Aide</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Livraison</a></li>
+          <li><a href="#">Retours</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="#">Conditions</a></li>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Suivez-nous</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Bijoux Pro. Tous droits réservés. | Conçu avec 💎</p>
+    </div>
+  </footer>
+
+  <script src="site-script.js"></script>
+  <script>
+    let currentSort = 'default';
+
+    function sortProducts(value) {
+      currentSort = value;
+      const grid = document.querySelector('.products-grid');
+      const cards = Array.from(grid.querySelectorAll('.product-card'));
+      
+      const sortedCards = cards.sort((a, b) => {
+        const priceA = parseInt(a.querySelector('.product-price').textContent);
+        const priceB = parseInt(b.querySelector('.product-price').textContent);
+        const nameA = a.querySelector('.product-name').textContent;
+        const nameB = b.querySelector('.product-name').textContent;
+
+        switch(value) {
+          case 'price-asc':
+            return priceA - priceB;
+          case 'price-desc':
+            return priceB - priceA;
+          case 'name':
+            return nameA.localeCompare(nameB);
+          default:
+            return 0;
+        }
+      });
+
+      grid.innerHTML = '';
+      sortedCards.forEach(card => grid.appendChild(card));
+    }
+  </script>
+</body>
+</html>
