@@ -1,4 +1,4 @@
-// ========================= BIJOUX PRO - SITE WEB JS =========================
+ // ========================= BIJOUX PRO - SITE WEB JS =========================
 
 class BijouxStore {
   constructor() {
@@ -86,25 +86,9 @@ class BijouxStore {
             <h3 class="product-name">${product.name}</h3>
             <p class="product-description">${product.description}</p>
             <div class="product-specs">
-              <div class="spec">
-                <span class="spec-label">Matière:</span>
-                <span class="spec-value">${product.material}</span>
-              </div>
-              <div class="spec">
-                <span class="spec-label">Pierre:</span>
-                <span class="spec-value">${product.stone}</span>
-              </div>
-              <div class="spec">
-                <span class="spec-label">Poids:</span>
-                <span class="spec-value">${product.weight}</span>
-              </div>
-              <div class="spec">
-                <span class="spec-label">Stock:</span>
-                <span class="spec-value">${product.inStock ? 'Disponible' : 'Rupture'}</span>
-              </div>
             </div>
             <div class="product-footer">
-              <span class="product-price">${product.price.toLocaleString('fr-FR')} €</span>
+              <span class="product-price">${product.price.toLocaleString('fr-FR')} fcfa</span>
               <button class="btn-add-to-cart" data-add-to-cart="${product.id}" 
                 ${product.inStock ? '' : 'disabled'}>
                 Ajouter
