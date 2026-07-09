@@ -101,6 +101,8 @@ header {
 .nav-menu a {
   font-weight: 500;
   position: relative;
+  text-align: center;
+
 }
 
 .nav-menu a::after {
@@ -177,6 +179,34 @@ header {
 .btn-login:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--light);
+  color: var(--dark);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(212, 175, 55, 0.12);
+  transform: translateY(-1px);
+}
+
+.navbar {
+  position: relative;
+}
+
+.nav-menu.active {
+  display: flex;
 }
 
 /* ========================= HERO ========================= */
@@ -681,16 +711,99 @@ footer {
 }
 
 /* ========================= RESPONSIVE ========================= */
+@media (max-width: 1024px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    right: 2rem;
+    flex-direction: column;
+    gap: 0;
+    width: min(320px, calc(100vw - 2rem));
+    background: white;
+    padding: 1rem 1rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 120;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .nav-right > * {
+    width: 100%;
+  }
+
+  .nav-right .cart-icon,
+  .nav-right .btn-login,
+  .nav-right .search-box {
+    width: 100%;
+  }
+
+  .nav-right .cart-icon {
+    order:1;
+    justify-content: flex-start;
+    width: 50px;
+    
+  }
+
+  #client-link {
+    order: 2;
+  }
+
+  .search-box {
+    display: flex;
+    order: 3;
+    margin-top: 0.25rem;
+  }
+
+  .nav-right .btn-login:not(#client-link) {
+    order: 4;
+   
+    
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     gap: 1rem;
   }
 
+  .nav-toggle {
+    align-self: flex-end;
+  }
+
   .nav-menu {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+    right: 1rem;
+    width: calc(100vw - 1.5rem);
   }
 
   .hero h1 {

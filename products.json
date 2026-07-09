@@ -12,7 +12,7 @@
       "id": 2,
       "name": "Bague",
       "category": "bagues",
-      "price":2999,
+      "price":5000,
       "image": "images/bargue01.jpg",
       "description": "Bague en or rose sertie d'un saphir bleuté, conçue pour une commande sur-mesure.",
       "inStock": true
@@ -21,7 +21,7 @@
       "id": 3,
       "name": "Bracelet Charme",
       "category": "bracelets",
-      "price":1999,
+      "price":2000,
       "image": "images/montre07.jpg",
       "description": "bracelets parfait pour les sorties en couples",
       "inStock": true
@@ -39,7 +39,7 @@
   
     {
       "id": 6,
-      "name": "Bague Fiançailles Or",
+      "name": "Bague Fiançailles Argent",
       "category": "bagues",
       "price": 4500,
       "image": "images/bargue03.jpg",
@@ -50,7 +50,7 @@
       "id": 7,
       "name": "Montre Luxe ",
       "category": "montres",
-      "price": 5800,
+      "price": 12000,
       "image": "images/montre05.jpg",
       "description": "montres tres rare dans le marche des bichoux",
       "inStock": true
@@ -59,7 +59,7 @@
       "id": 8,
       "name": "Pendentif Cœur",
       "category": "pendentifs",
-       "price":2999,
+       "price":32000,
       "image": "images/ensemble01.jpg",
       "description": "Bague en or rose sertie d'un saphir bleuté, conçue pour une commande sur-mesure.",
       "inStock": true
@@ -68,7 +68,7 @@
       "id": 1,
       "name": "Collier Éternel",
       "category": "colliers",
-      "price": 2000,
+      "price": 20000,
       "image": "images/collier06.jpg" , "description": "Un collier de pierre précieuse.",
       "inStock": true
     },
@@ -83,7 +83,7 @@
      { "id": 7,
       "name": "Montre Luxe Bijou",
       "category": "montres",
-      "price": 8800,
+      "price": 18800,
       "image": "images/montre02.jpg",
       "description": "montres tres rare dans le marche des bichoux",
       "inStock": true
@@ -91,7 +91,7 @@
     {  "id": 7,
       "name": "Montre ",
       "category": "montres",
-      "price": 5800,
+      "price": 15800,
       "image": "images/montre01.jpg",
       "description": "montres tres rare dans le marche des bichoux",
       "inStock": true
