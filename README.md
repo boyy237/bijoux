@@ -1,196 +1,88 @@
-# 💎 Bijoux Pro - Système Complet E-Commerce + Dashboard Admin
+# Bijoux Pro — Boutique en ligne (Next.js + PWA)
 
-## 📋 Vue d'ensemble
+Application e-commerce complète : bijoux, habits, sacs, montres et accessoires, avec
+espace client (réservation/achat) et dashboard admin complet.
 
-Un système professionnel et moderne de vente de bijoux en ligne avec:
-- **Site e-commerce**: Boutique, catalogue produits, panier, réservations
-- **Dashboard admin**: Gestion des réservations, statistiques, gestion de compte
-- **Sécurité**: Connexion admin, sessions, localStorage
+## Démarrage
 
----
-
-## 🚀 Fichiers créés
-
-### 📁 Site Web E-Commerce
-- **index.html** - Homepage avec présentation et produits vedettes
-- **products.html** - Catalogue complet avec filtres et recherche
-- **cart.html** - Page panier et réservations
-- **login.html** - Connexion administrateur
-
-### 📁 Dashboard Admin
-- **bijoux.html** - Tableau de bord avec réservations et statistiques
-- **bijoux.css** - Style du dashboard moderne
-
-### 📁 Ressources
-- **site-style.css** - Style CSS complet du site
-- **site-script.js** - Logique JavaScript (panier, produits, localStorage)
-- **bijoux.js** - Logique du dashboard (réservations, sessions)
-- **products.json** - Données des 8 produits (colliers, bagues, bracelets, etc.)
-
----
-
-## 🎯 Fonctionnalités
-
-### Site Web
-✅ Homepage attractive avec héros section  
-✅ Catalogue de 8 produits haut de gamme  
-✅ Filtrage par catégorie et prix  
-✅ Recherche en temps réel  
-✅ Panier persistant (localStorage)  
-✅ Gestion quantités  
-✅ Réservations sauvegardées  
-✅ Design responsive mobile-friendly  
-
-### Dashboard Admin
-✅ Liste des réservations en temps réel  
-✅ Statistiques (réservations, produits, revenu)  
-✅ Recherche de réservations  
-✅ Gestion des comptes clients  
-✅ Menu interactif  
-✅ Lien retour vers site  
-✅ Système de déconnexion  
-
-### Sécurité
-✅ Authentification admin (email/password)  
-✅ Sessions navigateur  
-✅ Protection dashboard (redirection login)  
-
----
-
-## 👤 Identifiants de Test
-
-```
-Email:    admin@bijoux.pro
-Password: admin123
+```bash
+npm install
+npm run dev
 ```
 
----
+Puis ouvrir http://localhost:3000
 
-## 🔄 Flux utilisateur
+Pour un test en conditions réelles (production) :
 
-### Client
-1. Visite `index.html` (homepage)
-2. Parcourt `products.html` (catalogue)
-3. Ajoute au panier (stocké en localStorage)
-4. Aller à `cart.html` pour finaliser
-5. Passe la commande
-6. Réservation sauvegardée dans localStorage
-
-### Admin
-1. Visite `login.html`
-2. Se connecte avec admin@bijoux.pro / admin123
-3. Accès automatique à `bijoux.html` (dashboard)
-4. Voit toutes les réservations clients
-5. Peut consulter les statistiques
-6. Peut retourner au site via "Retour au site"
-
----
-
-## 💾 Données persistantes
-
-### localStorage
-- **cart** - Panier client actuel
-- **reservations** - Toutes les commandes passées
-
-### sessionStorage
-- **adminLogged** - État de connexion admin
-- **adminEmail** - Email de l'admin connecté
-
----
-
-## 🎨 Design
-
-- **Couleur principale**: Gold (#d4af37) - Élégance
-- **Couleur sombre**: #1a1a1a - Professionnalisme
-- **Couleur accent**: #4b90e2 - Modernité
-- **Palettes**: Dégradés, ombres douces, animations fluides
-- **Typography**: Segoe UI, moderne et lisible
-
----
-
-## 📱 Responsive
-
-| Appareil | Optimisé |
-|----------|----------|
-| Desktop | ✅ |
-| Tablet | ✅ |
-| Mobile | ✅ |
-
-### Points de rupture
-- 1200px - Grille grande taille
-- 860px - Grille 2 colonnes
-- 560px - Mobile optimisé
-
----
-
-## 🔗 Navigation
-
-```
-index.html (Home)
-    ↓
-products.html (Boutique)
-    ↓
-cart.html (Panier)
-    ↓
-login.html (Connexion)
-    ↓
-bijoux.html (Dashboard Admin)
+```bash
+npm run build
+npm run start
 ```
 
----
-
-## 🎁 Produits inclus
-
-1. **Collier Éternel** - 2150€ (Or blanc + Diamant)
-2. **Bague Lumière** - 1980€ (Or rose + Saphir)
-3. **Bracelet Charme** - 860€ (Or jaune + Perles)
-4. **Boucles d'oreilles Diamant** - 1680€ (Or blanc)
-5. **Collier Saphir Royal** - 3200€ (Or blanc + Saphir)
-6. **Bague Fiançailles Or** - 4500€ (Or blanc + Diamant)
-7. **Montre Luxe Bijou** - 5800€ (Or jaune) [Rupture]
-8. **Pendentif Cœur** - 890€ (Or blanc + Rubis)
-
----
-
-## 🛠️ Améliorations possibles
-
-- [ ] Backend/API (Node.js, Express)
-- [ ] Base de données (MongoDB, PostgreSQL)
-- [ ] Paiement réel (Stripe, PayPal)
-- [ ] Email notifications
-- [ ] Multi-langue
-- [ ] Avis clients
-- [ ] Wishlist
-- [ ] Recommandations IA
-- [ ] Système de points fidélité
-
----
-
-## 📊 Architecture
+## Identifiants admin (démo)
 
 ```
-moi/
-├── index.html              # Homepage
-├── products.html           # Catalogue
-├── cart.html              # Panier
-├── login.html             # Connexion
-├── bijoux.html            # Dashboard
-├── site-style.css         # Style site
-├── site-script.js         # Logic site
-├── bijoux.css             # Style dashboard
-├── bijoux.js              # Logic dashboard
-└── products.json          # Données produits
+Email : admin@bijoux.pro
+Mot de passe : admin123
 ```
 
----
+À changer via les variables d'environnement `ADMIN_EMAIL` et `ADMIN_PASSWORD`
+(fichier `.env.local` à créer, non fourni pour rester simple).
 
-## 📞 Support
+## Ce qui est inclus
 
-Pour toute question sur le système:
-- Consultez les commentaires du code
-- Vérifiez les console logs (F12)
-- Testez avec les identifiants fournis
+- **5 catégories** : Bijoux, Habits, Sacs, Montres, Accessoires — chacune avec ses
+  sous-catégories (visible/modifiable dans `lib/categories.js`)
+- **Espace client** : inscription/connexion, ajout au panier, réservation (paiement en
+  boutique) ou achat en ligne (choix du mode de paiement), historique des commandes,
+  annulation d'une réservation en attente
+- **Dashboard admin** (`/admin`) : statistiques (clients inscrits, commandes, chiffre
+  d'affaires, stock), gestion des produits (ajout avec import de photo depuis le
+  téléphone ou l'ordinateur, modification, suppression), gestion des clients
+  (liste + suppression), gestion des commandes (changement de statut)
+- **PWA** : installable sur mobile et desktop (`manifest.json` + `sw.js`), fonctionne
+  hors-ligne pour les pages déjà visitées
 
----
+## Stockage des données
 
-## ✨ Créé avec passions - Système Professionnel 2024
+Pas de base de données externe pour l'instant : les données sont stockées dans des
+fichiers JSON (`data/products.json`, `data/clients.json`, `data/orders.json`), lus et
+écrits via `lib/db.js`. C'est volontaire, pour avoir un site fonctionnel dès
+maintenant sans dépendre d'un backend externe.
+
+**Quand tu seras prêt pour le vrai backend** (comme discuté, ex. Medusa.js) : il
+suffira de remplacer les fonctions de `lib/db.js` par des appels à l'API du nouveau
+backend. Le reste du site (pages, composants) n'aura pas à changer, puisqu'il passe
+toujours par les routes `/api/...` de ce projet.
+
+## Paiement
+
+Le choix du mode de paiement (carte, PayPal, virement) est actuellement simulé : la
+commande est enregistrée avec le mode choisi mais aucun paiement réel n'est traité.
+À brancher sur Stripe (ou autre) quand le backend définitif sera en place.
+
+## Structure du projet
+
+```
+app/                  Pages et routes API (Next.js App Router)
+  api/                Toutes les routes API (produits, clients, commandes, auth, upload)
+  admin/              Espace admin (protégé par session)
+  categorie/[slug]/   Pages catégories
+  produit/[id]/       Fiche produit
+  compte/             Connexion / profil client
+  panier/             Panier + tunnel de commande
+components/           Composants réutilisables
+context/              Contexte du panier (React Context + localStorage)
+lib/                  Catégories, base JSON, auth, sessions, formatage
+data/                 "Base de données" JSON
+public/images/        Images des produits
+public/uploads/       Photos importées depuis le dashboard admin
+public/manifest.json  Manifeste PWA
+public/sw.js          Service worker (mode hors-ligne)
+```
+
+## Ajouter une catégorie ou sous-catégorie
+
+Tout se passe dans `lib/categories.js` : ajouter une entrée dans le tableau
+`CATEGORIES`, elle apparaît automatiquement dans la navigation, la boutique et le
+formulaire d'ajout de produit côté admin.

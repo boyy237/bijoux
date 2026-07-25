@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "name": "Collier Éternel",
+    "category": "bijoux",
+    "subcategory": "collier",
+    "price": 3000,
+    "image": "/images/collier01.jpg",
+    "description": "Collier en or blanc serti d'un diamant central, pour les grandes occasions.",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Collier Saphir Royal",
+    "category": "bijoux",
+    "subcategory": "collier",
+    "price": 3200,
+    "image": "/images/collier03.jpg",
+    "description": "Collier en or blanc et saphir, pièce d'exception fait main.",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Collier Perle Fine",
+    "category": "bijoux",
+    "subcategory": "collier",
+    "price": 980,
+    "image": "/images/collier05.jpg",
+    "description": "Collier fin orné de perles naturelles, élégance discrète au quotidien.",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Bague Lumière",
+    "category": "bijoux",
+    "subcategory": "bague",
+    "price": 1980,
+    "image": "/images/bargue01.jpg",
+    "description": "Bague en or rose sertie d'un saphir bleuté, conçue pour une commande sur-mesure.",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Bague Fiançailles Or",
+    "category": "bijoux",
+    "subcategory": "bague",
+    "price": 4500,
+    "image": "/images/bargue03.jpg",
+    "description": "Bague de fiançailles en or blanc et diamant, symbole d'engagement intemporel.",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Bague Solitaire",
+    "category": "bijoux",
+    "subcategory": "bague",
+    "price": 2700,
+    "image": "/images/bargue05.jpg",
+    "description": "Bague solitaire classique, monture en or jaune 18 carats.",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "Boucles d'oreilles Diamant",
+    "category": "bijoux",
+    "subcategory": "boucles-oreilles",
+    "price": 1680,
+    "image": "/images/bourcle01.jpg",
+    "description": "Boucles d'oreilles en or blanc serties de diamants.",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "Boucles d'oreilles Perle",
+    "category": "bijoux",
+    "subcategory": "boucles-oreilles",
+    "price": 890,
+    "image": "/images/boucle06.jpg",
+    "description": "Boucles d'oreilles élégantes ornées de perles fines.",
+    "inStock": true
+  },
+  {
+    "id": 9,
+    "name": "Chaîne Maille Or",
+    "category": "bijoux",
+    "subcategory": "chaine",
+    "price": 1450,
+    "image": "/images/collier02.jpg",
+    "description": "Chaîne en or jaune, maille serrée, portée seule ou superposée.",
+    "inStock": true
+  },
+  {
+    "id": 10,
+    "name": "Chaîne Argent Massif",
+    "category": "bijoux",
+    "subcategory": "chaine",
+    "price": 620,
+    "image": "/images/collier06.jpg",
+    "description": "Chaîne épaisse en argent massif, style intemporel.",
+    "inStock": true
+  },
+  {
+    "id": 11,
+    "name": "Ensemble Soirée Doré",
+    "category": "habits",
+    "subcategory": "ensemble",
+    "price": 640,
+    "image": "/images/ensemble01.jpg",
+    "description": "Ensemble deux pièces pour soirées élégantes, finitions dorées.",
+    "inStock": true
+  },
+  {
+    "id": 12,
+    "name": "Top Satin Ivoire",
+    "category": "habits",
+    "subcategory": "haut",
+    "price": 190,
+    "image": "/images/bargue07.jpg",
+    "description": "Top en satin, coupe fluide, idéal pour un look chic.",
+    "inStock": true
+  },
+  {
+    "id": 13,
+    "name": "Pantalon Tailleur Noir",
+    "category": "habits",
+    "subcategory": "pantalon",
+    "price": 220,
+    "image": "/images/bargue08.jpg",
+    "description": "Pantalon coupe droite, tissu structuré, parfait pour le bureau ou une sortie.",
+    "inStock": true
+  },
+  {
+    "id": 14,
+    "name": "Veste Cuir Élégance",
+    "category": "habits",
+    "subcategory": "veste",
+    "price": 480,
+    "image": "/images/bargue09.jpg",
+    "description": "Veste en cuir véritable, coupe ajustée, doublure soignée.",
+    "inStock": true
+  },
+  {
+    "id": 15,
+    "name": "Escarpins Talon Fin",
+    "category": "habits",
+    "subcategory": "chaussures",
+    "price": 310,
+    "image": "/images/bourcle04.jpg",
+    "description": "Escarpins en cuir, talon fin, pour une allure raffinée.",
+    "inStock": true
+  },
+  {
+    "id": 16,
+    "name": "Sac à Main Signature",
+    "category": "sacs",
+    "subcategory": "sac-main",
+    "price": 890,
+    "image": "/images/sac01.jpg",
+    "description": "Sac à main en cuir grainé, fermoir doré, format quotidien.",
+    "inStock": true
+  },
+  {
+    "id": 17,
+    "name": "Sac Luxe Édition Limitée",
+    "category": "sacs",
+    "subcategory": "sac-luxe",
+    "price": 2400,
+    "image": "/images/sac02.jpg",
+    "description": "Sac de luxe en cuir pleine fleur, série limitée numérotée.",
+    "inStock": true
+  },
+  {
+    "id": 18,
+    "name": "Sac d'École Premium",
+    "category": "sacs",
+    "subcategory": "sac-ecole",
+    "price": 150,
+    "image": "/images/sac03.jpg",
+    "description": "Sac d'école robuste et spacieux, plusieurs compartiments.",
+    "inStock": true
+  },
+  {
+    "id": 19,
+    "name": "Sac de Voyage Cuir",
+    "category": "sacs",
+    "subcategory": "sac-voyage",
+    "price": 560,
+    "image": "/images/96a821ff1f6e6e6557ab2f33c297feae.jpg",
+    "description": "Sac de voyage en cuir souple, grande contenance, bandoulière ajustable.",
+    "inStock": true
+  },
+  {
+    "id": 20,
+    "name": "Montre Luxe Bijou",
+    "category": "montres",
+    "subcategory": "montre-luxe",
+    "price": 5800,
+    "image": "/images/montre05.jpg",
+    "description": "Montre de luxe en or jaune, bracelet serti, pièce rare.",
+    "inStock": false
+  },
+  {
+    "id": 21,
+    "name": "Montre Homme Classique",
+    "category": "montres",
+    "subcategory": "montre-homme",
+    "price": 1290,
+    "image": "/images/montre01.jpg",
+    "description": "Montre homme cadran noir, bracelet acier, style intemporel.",
+    "inStock": true
+  },
+  {
+    "id": 22,
+    "name": "Montre Femme Élégance",
+    "category": "montres",
+    "subcategory": "montre-femme",
+    "price": 1450,
+    "image": "/images/montre02.jpg",
+    "description": "Montre femme fine, bracelet doré, cadran nacré.",
+    "inStock": true
+  },
+  {
+    "id": 23,
+    "name": "Montre Connectée Prestige",
+    "category": "montres",
+    "subcategory": "montre-connectee",
+    "price": 690,
+    "image": "/images/montre06.jpg",
+    "description": "Montre connectée au design premium, suivi santé et notifications.",
+    "inStock": true
+  },
+  {
+    "id": 24,
+    "name": "Ceinture Cuir Boucle Or",
+    "category": "accessoires",
+    "subcategory": "ceinture",
+    "price": 190,
+    "image": "/images/montr04.jpg",
+    "description": "Ceinture en cuir véritable, boucle plaquée or.",
+    "inStock": true
+  },
+  {
+    "id": 25,
+    "name": "Lunettes Soleil Prestige",
+    "category": "accessoires",
+    "subcategory": "lunettes",
+    "price": 260,
+    "image": "/images/8b337ef6234f2568f67ef2c0bd39a1a0.jpg",
+    "description": "Lunettes de soleil monture acétate, verres polarisés.",
+    "inStock": true
+  },
+  {
+    "id": 26,
+    "name": "Écharpe Soie Imprimée",
+    "category": "accessoires",
+    "subcategory": "echarpe",
+    "price": 140,
+    "image": "/images/montre07.jpg",
+    "description": "Écharpe en soie naturelle, imprimé exclusif.",
+    "inStock": true
+  },
+  {
+    "id": 27,
+    "name": "Pendentif Cœur",
+    "category": "bijoux",
+    "subcategory": "collier",
+    "price": 890,
+    "image": "/images/bourcle05.jpg",
+    "description": "Pendentif cœur en or blanc et rubis, offert avec sa chaîne.",
+    "inStock": true
+  }
+]

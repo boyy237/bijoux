@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "clientId": 1,
+    "clientName": "landry",
+    "clientEmail": "landryemmanuel18@gmail.com",
+    "items": [
+      {
+        "productId": 13,
+        "name": "Pantalon Tailleur Noir",
+        "price": 220,
+        "image": "/images/bargue08.jpg",
+        "qty": 2
+      },
+      {
+        "productId": 12,
+        "name": "Top Satin Ivoire",
+        "price": 190,
+        "image": "/images/bargue07.jpg",
+        "qty": 4
+      }
+    ],
+    "total": 1200,
+    "type": "reservation",
+    "paymentMethod": null,
+    "status": "confirmee",
+    "createdAt": "2026-07-22T17:07:47.174Z"
+  },
+  {
+    "id": 2,
+    "clientId": 1,
+    "clientName": "landry",
+    "clientEmail": "landryemmanuel18@gmail.com",
+    "items": [
+      {
+        "productId": 15,
+        "name": "Escarpins Talon Fin",
+        "price": 310,
+        "image": "/images/bourcle04.jpg",
+        "qty": 3
+      }
+    ],
+    "total": 930,
+    "type": "achat",
+    "paymentMethod": "paypal",
+    "status": "confirmee",
+    "createdAt": "2026-07-22T18:22:33.551Z"
+  }
+]
