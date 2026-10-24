@@ -1,3 +1,4 @@
+
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import { pool } from "./pool.js";
@@ -106,8 +107,8 @@ async function seed() {
     await client.query("BEGIN");
 
     // Admin
-    const adminEmail = process.env.ADMIN_EMAIL || "admin@bijoux.pro";
-    const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
+    const adminEmail = process.env.ADMIN_EMAIL || "dubois@bijoux.com";
+    const adminPassword = process.env.ADMIN_PASSWORD || "dubois237";
     const adminHash = await bcrypt.hash(adminPassword, 10);
     await client.query(
       `INSERT INTO admins (email, password_hash) VALUES ($1, $2)
