@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ error: err.message || "Erreur serveur." });
 });
 
-const PORT = process.env.PORT || 4400;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`✓ Backend Bijoux Pro démarré sur http://localhost:${PORT}`);
 });
