@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 
-const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:4000";
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:4400";
 
 // Relaie une requête vers le backend Express, en transmettant le cookie de
+
 // session du navigateur, et en relayant tout Set-Cookie renvoyé par le
 // backend (login/logout) vers le navigateur. Ainsi, tout le reste du
 // frontend continue d'appeler ses propres routes /api/... sans changement.
