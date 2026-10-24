@@ -68,11 +68,11 @@ export default function MobileNav({ categories, session }) {
         .drawer nav {
           display: flex;
           flex-direction: column;
-          gap: 18px;
+          gap: 15px;
           margin-top: 40px;
         }
         .drawer nav a {
-          font-size: 1.05rem;
+          font-size: 0.9rem;
           font-weight: 600;
           color: var(--dark);
         }
