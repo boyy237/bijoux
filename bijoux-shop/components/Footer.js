@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <p className="footer-logo">Landry <span>Express</span></p>
+          <p className="footer-logo">YOU <span>Express</span></p>
           <p className="footer-text">
             Bijoux, habits, sacs, montres et accessoires de luxe, sélectionnés avec exigence.
           </p>
@@ -21,10 +21,9 @@ export default function Footer() {
           <p className="footer-title">Compte</p>
           <Link href="/compte/connexion">Mon compte</Link>
           <Link href="/panier">Panier</Link>
-          <Link href="/admin/connexion">Espace administrateur</Link>
         </div>
       </div>
-      <p className="footer-copy">© {new Date().getFullYear()} Bijoux Pro. Tous droits réservés.</p>
+      <p className="footer-copy">© {new Date().getFullYear()} Bijoux . Tous droits réservés.</p>
 
       <style>{`
         .site-footer {

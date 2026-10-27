@@ -88,9 +88,10 @@ function ClientAuthForm() {
         </form>
 
         <p className="admin-link">
-          Vous êtes administrateur ? <Link href="/admin/connexion">Connexion admin</Link>
-        </p>
-      </div>
+          Vous êtes Nouveau ? Créer un compte
+          </p>
+
+        
 
       <style>{`
         .auth-section { display: flex; justify-content: center; }

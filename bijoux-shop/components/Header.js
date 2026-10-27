@@ -11,7 +11,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-row">
         <Link href="/" className="logo">
-          Landry <span>Express</span>
+          YOU <span>Express</span>
         </Link>
 
         <nav className="main-nav">
