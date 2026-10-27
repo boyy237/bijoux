@@ -2,7 +2,6 @@
 
 import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
 
 export default function ClientAuthPage() {
   return (
@@ -18,7 +17,7 @@ function ClientAuthForm() {
   const redirect = searchParams.get("redirect") || "/compte";
 
   const [tab, setTab] = useState("login");
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({ name: "", email: "", password: "", phone: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -67,6 +66,18 @@ function ClientAuthForm() {
               <input required value={form.name} onChange={(e) => update("name", e.target.value)} />
             </div>
           )}
+          {tab === "register" && (
+            <div className="field">
+              <label htmlFor="phone">Numéro de téléphone</label>
+              <input
+                id="phone"
+                type="tel"
+                autoComplete="tel"
+                value={form.phone}
+                onChange={(e) => update("phone", e.target.value)}
+              />
+            </div>
+          )}
           <div className="field">
             <label>Email</label>
             <input type="email" required value={form.email} onChange={(e) => update("email", e.target.value)} />
@@ -88,8 +99,11 @@ function ClientAuthForm() {
         </form>
 
         <p className="admin-link">
-          Vous êtes Nouveau ? Créer un compte
-          </p>
+          Vous êtes nouveau ?{" "}
+          <button type="button" onClick={() => setTab("register")}>
+            Créer un compte
+          </button>
+        </p>
 
         
 
@@ -104,7 +118,10 @@ function ClientAuthForm() {
         .tabs button.active { color: var(--dark); border-color: var(--primary); }
         .error-text { color: var(--danger); font-size: 0.85rem; margin-bottom: 14px; }
         .admin-link { text-align: center; font-size: 0.82rem; color: var(--muted); margin-top: 20px; }
-        .admin-link a { color: var(--accent); font-weight: 600; }
+        .admin-link button {
+          padding: 0; background: none; border: none; color: var(--accent);
+          font: inherit; font-weight: 600; cursor: pointer;
+        }
       `}</style>
     </div>
   );
