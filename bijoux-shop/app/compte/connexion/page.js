@@ -73,6 +73,12 @@ function ClientAuthForm() {
                 id="phone"
                 type="tel"
                 autoComplete="tel"
+                inputMode="numeric"
+                required
+                minLength={9}
+                maxLength={9}
+                pattern="[0-9]{9}"
+                title="Le numéro doit contenir exactement 9 chiffres."
                 value={form.phone}
                 onChange={(e) => update("phone", e.target.value)}
               />
