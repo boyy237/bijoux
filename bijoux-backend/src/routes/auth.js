@@ -23,8 +23,11 @@ router.post("/admin/login", async (req, res) => {
 // ---- Client ----
 router.post("/client/register", async (req, res) => {
   const { name, email, password, phone } = req.body;
-  if (!name || !email || !password) {
+  if (!name || !email || !password || typeof phone !== "string" || !phone.trim()) {
     return res.status(400).json({ error: "Tous les champs sont requis." });
+  }
+  if (!/^[0-9]{9}$/.test(phone.trim())) {
+    return res.status(400).json({ error: "Le numéro de téléphone doit contenir exactement 9 chiffres." });
   }
   if (password.length < 6) {
     return res.status(400).json({ error: "Le mot de passe doit contenir au moins 6 caractères." });
@@ -39,7 +42,7 @@ router.post("/client/register", async (req, res) => {
   const { rows } = await pool.query(
     `INSERT INTO clients (name, email, password_hash, phone) VALUES ($1, $2, $3, $4)
      RETURNING id, name, email, phone, created_at`,
-    [name, email, passwordHash, phone || null]
+    [name, email, passwordHash, phone.trim()]
   );
   const client = rows[0];
 

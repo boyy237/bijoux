@@ -41,6 +41,9 @@ export default function AdminClientsPage() {
               <div>
                 <p className="client-name">{c.name}</p>
                 <p className="client-email">{c.email}</p>
+                <p className="client-phone">
+                  {c.phone || "Téléphone non renseigné"}
+                </p>
               </div>
               <span className="badge badge-gold">{c.ordersCount} commande(s)</span>
               <p className="client-date">Inscrit le {new Date(c.createdAt).toLocaleDateString("fr-FR")}</p>
@@ -61,6 +64,7 @@ export default function AdminClientsPage() {
         .client-row:last-child { border-bottom: none; }
         .client-name { font-weight: 600; }
         .client-email { font-size: 0.82rem; color: var(--muted); }
+        .client-phone { font-size: 0.82rem; color: var(--muted); }
         .client-date { font-size: 0.8rem; color: var(--muted); }
         .btn-sm { padding: 6px 14px; font-size: 0.8rem; }
         @media (max-width: 760px) {
